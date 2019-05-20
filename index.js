@@ -3,6 +3,7 @@
  * @author Adolfo Castro Noreña <github.com/adolfo9castro>
  * @requires cursos
  * @requires verCursos
+ * @requires argv
  * 
 */
 
@@ -11,12 +12,51 @@
 */
 const cursos = require('./cursos')
 
-
 /** Trae a lógica de ver los cursos
 * @constant {module}
 */
 const { verCursos } = require('./controllers')
 
-verCursos(cursos, (r) => {
-    console.log(r)
-})
+/** Trae a lógica de ver los cursos
+* @constant {module}
+*/
+const options = {
+    id: {
+        alias: 'i',
+        demand: true
+    },
+    nombre: {
+        alias: 'n',
+        demand: true
+    },
+    cedula: {
+        alias: 'c',
+        demand: true
+    }
+}
+/** FS init
+* @constant {module}
+*/
+const fs = require('fs')
+
+/** Iniciar yargs
+* @constant {module}
+*/
+const argv = require('yargs')
+    .command(`inscribirse`, `Mensaje marica`, options)
+    .argv;
+
+if (!argv.i) {
+    verCursos(cursos, (r) => {
+        console.log(r)
+    })
+} else {
+    let curso = cursos.find((curso) => {
+        return curso.id == argv.i
+    })
+    let registro = `El estudiante: ${argv.n}, con cédula: ${argv.c}, se ha inscrito al curso '${curso.nombre}' con una duración de ${curso.duracion} hora y con un valor de ${curso.valor}`
+    fs.writeFile('usuario.txt', registro, (e) => {
+        if (e) throw (e)
+        console.log('Se ha creado el archivo')
+    })
+}

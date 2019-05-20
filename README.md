@@ -9,12 +9,17 @@ En una terminal de comandos pueden dar:
 
 ```sh
 $ cd curso_node_js
-$ npm install -d
+$ npm install
+```
+Para ver el primer punto solo hay que dar
+```sh
 $ npm start
 ```
 
-Así tendrá el primer punto corriendo 
-
+El segundo punto debe enviar los parametros así:
+```sh
+$ node index incribirse -i=<id> -n<nombre> -c<cedula>
+```
 
 License
 ----

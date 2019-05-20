@@ -10,6 +10,13 @@
   "scripts": {
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adolfo9castro/curso_node_js"
+  },
   "author": "https://github.com/adolfo9castro",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "yargs": "^13.2.4"
+  }
 }
