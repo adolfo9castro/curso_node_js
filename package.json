@@ -1,0 +1,15 @@
+{
+  "name": "curso_node_js",
+  "version": "0.0.1",
+  "description": "Proyecto para toda las entregar en el curso de node js",
+  "main": "index.js",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "https://github.com/adolfo9castro",
+  "license": "GPL-3.0"
+}
