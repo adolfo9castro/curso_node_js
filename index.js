@@ -43,7 +43,7 @@ const fs = require('fs')
 * @constant {module}
 */
 const argv = require('yargs')
-    .command(`inscribirse`, `Mensaje marica`, options)
+    .command(`inscribirse`, `Incribirse al curso`, options)
     .argv;
 
 if (!argv.i) {
