@@ -54,9 +54,18 @@ if (!argv.i) {
     let curso = cursos.find((curso) => {
         return curso.id == argv.i
     })
-    let registro = `El estudiante: ${argv.n}, con cédula: ${argv.c}, se ha inscrito al curso '${curso.nombre}' con una duración de ${curso.duracion} hora y con un valor de ${curso.valor}`
-    fs.writeFile('usuario.txt', registro, (e) => {
-        if (e) throw (e)
-        console.log('Se ha creado el archivo')
-    })
+    let registro = {}
+    
+    try {
+        registro = `El estudiante: ${argv.n}, con cédula: ${argv.c}, se ha inscrito al curso '${curso.nombre}' con una duración de ${curso.duracion} hora y con un valor de ${curso.valor}\n`
+        fs.appendFile('usuario.txt', registro, (e) => {
+            if (e) throw (e)
+            console.log('Se ha creado el archivo')
+        })
+    } catch (error) {
+        console.log('El curso que eligió no existe, por favor escoja uno de estos:\n')
+        verCursos(cursos, (r) => {
+            console.log(r)
+        })
+    }
 }
