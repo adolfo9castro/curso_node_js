@@ -18,7 +18,7 @@ $ npm start
 
 El segundo punto debe enviar los parametros así:
 ```sh
-$ node index incribirse -i=<id> -n=<nombre> -c=<cedula>
+$ node index incribirse -i=id -n=nombre -c=cedula
 ```
 
 License
