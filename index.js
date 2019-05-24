@@ -46,7 +46,7 @@ const argv = require('yargs')
     .command(`inscribirse`, `Incribirse al curso`, options)
     .argv;
 
-if (!argv.i) {
+if (!argv.i || typeof argv.i != "number" || typeof argv.n != "string" || typeof argv.n != "string") {
     verCursos(cursos, (r) => {
         console.log(r)
     })
@@ -60,7 +60,7 @@ if (!argv.i) {
         registro = `El estudiante: ${argv.n}, con cédula: ${argv.c}, se ha inscrito al curso '${curso.nombre}' con una duración de ${curso.duracion} hora y con un valor de ${curso.valor}\n`
         fs.appendFile('usuario.txt', registro, (e) => {
             if (e) throw (e)
-            console.log('Se ha creado el archivo')
+            console.log(`Quedo registrado: \n${registro}`)
         })
     } catch (error) {
         console.log('El curso que eligió no existe, por favor escoja uno de estos:\n')
