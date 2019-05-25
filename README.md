@@ -1,5 +1,5 @@
 # Curso Node JS - Proyecto para hacer las entregas
-En este respositorio estará todas las tareas divididas por commits
+En este respositorio estará todas las tareas divididas por **Ramas** o **Branch**
 
 ### Installation
 
