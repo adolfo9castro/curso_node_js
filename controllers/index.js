@@ -1,3 +1,4 @@
 module.exports = {
-    verCursos: require('./verCursos')
+    verCursos: require('./verCursos'),
+    inscribirse: require('./inscribirse')
 }
