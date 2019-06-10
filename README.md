@@ -1,6 +1,9 @@
 # Curso Node JS - Proyecto para hacer las entregas
 En este respositorio estará todas las tareas divididas por **Ramas** o **Branch**
 
+#### Recomendation
+Usar VSCODE
+
 ### Installation
 
 Deben tener  [Node.js](https://nodejs.org/) en su versión LTS en su equipo.
